@@ -6,7 +6,7 @@ import (
 	"os/exec"
 	"time"
 
-	"github.com/contiv/executor"
+	"github.com/idealhack/executor"
 	"github.com/sirupsen/logrus"
 )
 

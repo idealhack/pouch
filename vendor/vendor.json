@@ -714,6 +714,12 @@
 			"revisionTime": "2017-11-07T15:27:38Z"
 		},
 		{
+			"checksumSHA1": "ey5VNDTnjwsR5xvOMsgyT+JJfCA=",
+			"path": "github.com/idealhack/executor",
+			"revision": "37b73e9a5495570695f88c576342a9db7366655f",
+			"revisionTime": "2018-05-30T15:58:58Z"
+		},
+		{
 			"checksumSHA1": "/MbkohdDPqGPeAkHq6ZkInB/WD0=",
 			"path": "github.com/imdario/mergo",
 			"revision": "0d4b488675fdec1dde48751b05ab530cf0b630e1",
