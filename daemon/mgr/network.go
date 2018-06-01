@@ -6,7 +6,6 @@ import (
 	"net"
 	"path"
 	"strings"
-	"time"
 
 	apitypes "github.com/alibaba/pouch/apis/types"
 	"github.com/alibaba/pouch/daemon/config"
@@ -73,8 +72,6 @@ func NewNetworkManager(cfg *config.Config, store *meta.Store, ctrMgr ContainerMg
 	if cfg.NetworkConfig.ExecRoot == "" {
 		cfg.NetworkConfig.ExecRoot = network.DefaultExecRoot
 	}
-
-	initNetworkLog(cfg)
 
 	// get active sandboxes
 	ctrs, err := ctrMgr.List(context.Background(),
@@ -539,18 +536,6 @@ func (nm *NetworkManager) getNetworkSandbox(id string) libnetwork.Sandbox {
 		return false
 	})
 	return sb
-}
-
-func initNetworkLog(cfg *config.Config) {
-	if cfg.Debug {
-		logrus.SetLevel(logrus.DebugLevel)
-	}
-
-	formatter := &logrus.TextFormatter{
-		FullTimestamp:   true,
-		TimestampFormat: time.RFC3339Nano,
-	}
-	logrus.SetFormatter(formatter)
 }
 
 func endpointOptions(n libnetwork.Network, endpoint *types.Endpoint) ([]libnetwork.EndpointOption, error) {
